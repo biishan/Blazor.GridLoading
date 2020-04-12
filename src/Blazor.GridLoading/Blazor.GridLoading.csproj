@@ -8,6 +8,7 @@
     <Authors>Bishan</Authors>
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl>https://github.com/biishan/Blazor.GridLoading</RepositoryUrl>
+    <PackageId>GridLoading.Blazor</PackageId>
   </PropertyGroup>
 
 
