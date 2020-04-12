@@ -25,9 +25,8 @@ steps:
     restoreSolution: '$(Parameters.solution)'
 
 - task: VSBuild@1
-  displayName: 'Build solution'
   inputs:
-    solution: '$(Parameters.solution)'
+    solution: '**\*.sln'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     clean: true
