@@ -30,6 +30,8 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     clean: true
+    restoreNugetPackages: true
+    msbuildArchitecture: 'x64'
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
