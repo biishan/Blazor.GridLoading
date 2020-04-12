@@ -24,14 +24,24 @@ steps:
   inputs:
     restoreSolution: '$(Parameters.solution)'
 
-- task: VSBuild@1
+#- task: VSBuild@1
+#  inputs:
+#    solution: '**\*.sln'
+#    msbuildArgs: '/t:Restore /t:pack'
+#    platform: '$(buildPlatform)'
+#    configuration: '$(buildConfiguration)'
+#    clean: true
+#    msbuildArchitecture: 'x64'
+
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
   inputs:
-    solution: '**\*.sln'
-    msbuildArgs: '/t:Restore /t:pack'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-    clean: true
-    msbuildArchitecture: 'x64'
+    command: 'pack'
+    packagesToPack: '**/Blazor.GridLoading.csproj'
+    nobuild: true
+    versioningScheme: 'off'
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
@@ -46,6 +56,3 @@ steps:
     PathtoPublish: '$(build.artifactstagingdirectory)'
     ArtifactName: '$(Parameters.ArtifactName)'
   condition: succeededOrFailed()
-
-#- script: dotnet build --configuration $(buildConfiguration)
-#  displayName: 'dotnet build $(buildConfiguration)'
