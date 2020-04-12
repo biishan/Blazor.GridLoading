@@ -1,37 +1,74 @@
-## Welcome to GitHub Pages
+# Blazor.GridLoading 
+![Build Status](https://dev.azure.com/biishan/Blazor.GridLoading/_apis/build/status/biishan.Blazor.GridLoading?branchName=master)
+[![Nuget](https://img.shields.io/nuget/v/GridLoading.Blazor)](https://www.nuget.org/packages/GridLoading.Blazor/)
 
-You can use the [editor on GitHub](https://github.com/biishan/Blazor.GridLoading/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+The purpose of this UI component library is to replace "loading..." message with a skeleton loader when data grid is being loaded.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Add the NuGet package 
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+**Package Manager**
+```bash
+Install-Package GridLoading.Blazor 
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+**CLI**
+```bash
+dotnet add package GridLoading.Blazor
+```
+**.csproj**
+```html
+<PackageReference Include="GridLoading.Blazor" Version="1.0.0-preview1" />
+```
 
-### Jekyll Themes
+## Reference the CSS Styling
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/biishan/Blazor.GridLoading/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Add the CSS to your application's index.html or _host.cshtml
+```html
+<link rel="stylesheet" href="_content/GridLoading.Blazor/styles.css" />
+```
 
-### Support or Contact
+## Import the namespace
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Add a reference to the namespace in your _Imports.razor or at the top of a page.
+
+```html
+@using Blazor.GridLoading
+```
+
+## Usage
+
+This is to showcase how you can render ```<GridLoading />``` while data is being retrieved from an end point.
+
+```html
+@page "/fetchdata"
+...
+...
+
+@if (forecasts == null)
+{
+    <GridLoading RowCount="5"
+                 ColumnNames="@(new List<string> { "Date", "Temp. (C)", "Temp. (F)", "Summary" })"
+                 AnimationType="AnimationType.Flash" />
+}
+else
+{
+    <!-- Rest of your HTML goes here. -->
+}
+```
+
+### Optional
+
+- Support Dark Mode
+- Animation Duration (in seconds)
+- Animation Iteration Count
+
+```html
+<GridLoading RowCount="5"
+             ColumnNames="@(new List<string> { "Date", "Temp. (C)", "Temp. (F)", "Summary" })"
+             AnimationType="AnimationType.Flash" IsDarkMode="true" AnimationDuration="3"
+             AnimationIterationCount="1"/>
+```
+
+## Output
+
+<img src="https://github.com/biishan/Blazor.GridLoading/blob/master/example.gif"/>
