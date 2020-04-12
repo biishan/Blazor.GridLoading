@@ -27,10 +27,10 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '**\*.sln'
+    msbuildArgs: '/t:Restore'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     clean: true
-    restoreNugetPackages: true
     msbuildArchitecture: 'x64'
 
 - task: CopyFiles@2
