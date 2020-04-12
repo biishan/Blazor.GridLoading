@@ -1,11 +1,126 @@
-﻿/*
-    This file is to show how CSS and other static resources (such as images) can be
-    used from a library project/package.
-*/
-
-.my-component {
-    border: 2px dashed red;
-    padding: 1em;
-    margin: 1em 0;
-    background-image: url('background.png');
+﻿.gl-table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse;
+    border-spacing: 2px;
 }
+
+    .gl-table td, .gl-table th {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: rgb(222, 226, 230);
+    }
+
+.gl-table-sm td, .gl-table-sm th {
+    padding: .3rem;
+}
+
+.gl-table-dark {
+    color: #fff;
+    background-color: #343a40;
+}
+
+    .gl-table-dark td, .gl-table-dark th, .gl-table-dark thead th {
+        border-color: #454d55;
+    }
+
+@-webkit-keyframes gl-pulse {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes gl-pulse {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.gl-pulse {
+    -webkit-animation-name: gl-pulse;
+    animation-name: gl-pulse;
+}
+
+@-webkit-keyframes gl-fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes gl-fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.gl-fadeIn {
+    -webkit-animation-name: gl-fadeIn;
+    animation-name: gl-fadeIn;
+}
+
+
+@keyframes gl-flash {
+    from, 50%, to {
+        opacity: 1;
+    }
+
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+.gl-flash {
+    -webkit-animation-name: gl-flash;
+    animation-name: gl-flash;
+}
+
+.gl-animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.gl-table-row-loading {
+    position: relative;
+}
+
+    .gl-table-row-loading .gl-bar {
+        background-color: #E7E7E7;
+        height: 14px;
+        border-radius: .3rem !important;
+    }

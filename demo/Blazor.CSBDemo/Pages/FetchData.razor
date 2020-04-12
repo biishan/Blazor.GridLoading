@@ -7,7 +7,9 @@
 
 @if (forecasts == null)
 {
-    <p><em>Loading...</em></p>
+    <GridLoading RowCount="5"
+                 ColumnNames="@(new List<string> { "Date", "Temp. (C)", "Temp. (F)", "Summary" })"
+                 AnimationType="AnimationType.Flash" />
 }
 else
 {
@@ -39,6 +41,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        await Task.Delay(5000);
         forecasts = await Http.GetJsonAsync<WeatherForecast[]>("sample-data/weather.json");
     }
 

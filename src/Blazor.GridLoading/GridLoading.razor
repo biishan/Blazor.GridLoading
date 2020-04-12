@@ -1,0 +1,32 @@
+﻿@inherits GridLoadingBase
+
+@if (_isColNamesNullOrEmpty)
+{
+    <span style="color: #dc3545 !important;">No column names specified.</span>
+}
+else
+{
+    <table class="@_tableCss">
+        <thead>
+            <tr>
+                @foreach (var columnName in ColumnNames)
+                {
+                    <th>@columnName</th>
+                }
+            </tr>
+        </thead>
+        <tbody class="@_animationType" style="animation-duration: @(_animationDuration); animation-iteration-count: @(AnimationIterationCount);">
+            @for (var i = 0; i < RowCount; i++)
+            {
+                <tr>
+                    @foreach (var columnName in ColumnNames)
+                    {
+                        <td class="gl-table-row-loading">
+                            <div class="gl-bar" style="width:@_columnSize;"></div>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}

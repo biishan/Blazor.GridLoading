@@ -9,7 +9,9 @@
 
 @if (forecasts == null)
 {
-    <p><em>Loading...</em></p>
+    <GridLoading RowCount="5"
+                 ColumnNames="@(new List<string> { "Date", "Temp. (C)", "Temp. (F)", "Summary" })"
+                 AnimationType="AnimationType.Flash" />
 }
 else
 {

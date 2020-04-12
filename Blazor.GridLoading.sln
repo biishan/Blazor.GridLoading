@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.GridLoading", "src\B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{15AA02BC-1136-4C0E-BF92-6CE51B3F7367}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.SSBDemo", "demo\Blazor.SSBDemo\Blazor.SSBDemo.csproj", "{D3E65959-9BCF-4F86-9AF3-EA8B11D42BF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.SSBDemo", "demo\Blazor.SSBDemo\Blazor.SSBDemo.csproj", "{D3E65959-9BCF-4F86-9AF3-EA8B11D42BF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.CSBDemo", "demo\Blazor.CSBDemo\Blazor.CSBDemo.csproj", "{41D13A82-2BD8-4A03-B197-CF8015D24525}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.CSBDemo", "demo\Blazor.CSBDemo\Blazor.CSBDemo.csproj", "{41D13A82-2BD8-4A03-B197-CF8015D24525}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
