@@ -27,7 +27,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '**\*.sln'
-    msbuildArgs: '/t:Restore'
+    msbuildArgs: '/t:Restore /t:pack'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     clean: true
