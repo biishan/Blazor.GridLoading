@@ -4,6 +4,8 @@
 
 The purpose of this UI component library is to replace "loading..." message with a skeleton loader when data grid is being loaded.
 
+Demo: https://biishan.github.io/DemoBlazorGridLoading/home
+
 ## Add the NuGet package 
 
 **Package Manager**
