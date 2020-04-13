@@ -1,4 +1,5 @@
 ﻿@page "/"
+@page "/home"
 @inherits IndexBase
 
 <h1>Demo Grid Loading!</h1>
@@ -8,7 +9,7 @@
 <select @bind="@AnimationTypeString">
     @foreach (var animationType in _animationTypes)
     {
-        <option value="@animationType.GetDescription()">@animationType.ToString()</option>
+    <option value="@animationType.GetDescription()">@animationType.ToString()</option>
     }
 </select>
 
