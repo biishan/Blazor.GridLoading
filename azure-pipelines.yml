@@ -38,6 +38,12 @@ steps:
 
 - task: DotNetCoreCLI@2
   inputs:
+    command: 'publish'
+    publishWebProjects: true
+    zipAfterPublish: false
+
+- task: DotNetCoreCLI@2
+  inputs:
     command: 'pack'
     packagesToPack: '**/Blazor.GridLoading.csproj'
     nobuild: true
